@@ -43,5 +43,8 @@ for (let i = 0; i < paesi.length; i++) {
 /* LOGICA / INTERAZIONI */
 
 let bottoneLeft = document.querySelector(".button-left");
-console.log(bottoneLeft, "bottoneLeft");
+let bottoneRight = document.querySelector(".button-right");
+let bottoneUp = document.querySelector(".button-up");
+let bottoneDown = document.querySelector(".button-down");
+
 
