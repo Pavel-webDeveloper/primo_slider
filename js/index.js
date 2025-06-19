@@ -12,19 +12,25 @@ let descrizioni = [
 
 // CONTAINER LEFT
 let containerLeft = document.querySelector(".container-left");
-console.log(containerLeft, "containerLeft");
+let containerImgLeft = document.createElement("div");
+containerImgLeft.setAttribute("class", "container-img-left");
+let imgPrimary = document.createElement("img");
+imgPrimary.setAttribute("src", `img/${paesi[indice]}.png`);
+containerImgLeft.append(imgPrimary);
+containerLeft.append(containerImgLeft);
 
-containerLeft.innerHTML += `
-    <div class="container-img-left">
-                    <img src="img/${paesi[indice]}.png" alt="">
-                </div>
-`;
-
+let containerDescription = document.querySelector(".container-description");
+let description = document.createElement("p");
+description.textContent = `${descrizioni[indice]}`;
+description.style.color = "white";
+description.style.fontSize = "1.6rem";
+description.style.backgroundColor = "rgba(27, 5, 5, 0.5)"; /* Nero con 50% trasparenza */
+description.style.padding = "15px";
+containerDescription.append(description);
 
 
 // CONTAINER RIGHT
 let containerRight = document.querySelector(".container-right");
-console.log(containerRight, "containerRight");
 
 for (let i = 0; i < paesi.length; i++) {
 
@@ -36,7 +42,6 @@ for (let i = 0; i < paesi.length; i++) {
 
     imgRight.append(imgIcon);
     containerRight.append(imgRight);  
-    
 }
 
 
@@ -47,4 +52,27 @@ let bottoneRight = document.querySelector(".button-right");
 let bottoneUp = document.querySelector(".button-up");
 let bottoneDown = document.querySelector(".button-down");
 
+bottoneLeft.addEventListener("click", carosello);
+bottoneRight.addEventListener("click", carosello);
+bottoneUp.addEventListener("click", carosello);
+bottoneDown.addEventListener("click", carosello);
 
+
+function carosello(event){
+
+    // console.log(event.target.className.includes("right"));
+    if( event.target.className.includes("right") || event.target.className.includes("down")){
+        indice++
+    }else {
+        indice--
+    }
+
+    if( indice < 0){
+        indice = 4;
+    }
+    else if( indice > 4){
+        indice = 0;
+    }
+    imgPrimary.setAttribute("src", `img/${paesi[indice]}.png`);
+    description.textContent = `${descrizioni[indice]}`;
+}

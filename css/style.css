@@ -67,15 +67,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.3s ease;
 }
+
 .button-left{
     top: 50%;
     transform: translate(20px, -50%);
+}.button-left:hover {
+    transform: translate(20px, -50%) scale(1.2);
 }
+
 .button-right{
     top: 50%;
     right: 0;
     transform: translate(-20px, -50%);
+}
+.button-right:hover {
+    transform: translate(-20px, -50%) scale(1.2);
 }
 
 
@@ -96,9 +104,26 @@
     left: 50%;
     transform: translate(-50%, 10px);
 }
+.button-up:hover{
+    transform: translate(-50%, 10px) scale(1.2);
+}
 .button-down{
     bottom: 0;
     left: 50%;
     transform: translate(-50%, -10px);
 }
+.button-down:hover{
+    transform: translate(-50%, -10px) scale(1.2);
+}
 
+/*  TESTO */
+.container-description {
+    width: 65%;
+    height: 200px;
+    /* background-color: yellow; */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 30px;
+
+}
