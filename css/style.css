@@ -1,0 +1,104 @@
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.debug {
+    border: 1px solid black;
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+    background-color: aqua;
+    position: relative;
+}
+
+.slider-container {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    display: flex;
+}
+
+
+/* LEFT */
+.container-left {
+    width: calc(80%);
+    height: 100%;
+    background-color: blue;
+    position: relative;
+}
+
+.container-right {
+    width: calc(20%);
+    height: 100%;
+    background-color: green;
+    position: relative;
+}
+
+.container-img-left {
+    width: 100%;
+    height: 100%;
+}
+.container-img-left img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 -35px;
+}
+
+/* BOTTONI */
+.container-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: lightgrey;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-left{
+    top: 50%;
+    transform: translate(20px, -50%);
+}
+.button-right{
+    top: 50%;
+    right: 0;
+    transform: translate(-20px, -50%);
+}
+
+
+/* RIGHT */
+.container-img-right {
+    width: 100%;
+    height: 20%;
+}
+.container-img-right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 -5px;
+}
+
+/* BOTTONI */
+.button-up{
+    left: 50%;
+    transform: translate(-50%, 10px);
+}
+.button-down{
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -10px);
+}
+
