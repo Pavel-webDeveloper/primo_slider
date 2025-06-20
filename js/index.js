@@ -40,6 +40,11 @@ for (let i = 0; i < paesi.length; i++) {
     imgIcon.setAttribute("src", `img/${paesi[i]}.png`);
     imgIcon.setAttribute("alt", paesi[i]);
 
+    if( i == indice){
+        imgIcon.setAttribute("class", "active");
+    }
+    
+
     imgRight.append(imgIcon);
     containerRight.append(imgRight);  
 }
@@ -59,6 +64,13 @@ bottoneDown.addEventListener("click", carosello);
 
 
 function carosello(event){
+    // prendo l'elemento con la classe active e la rimuovo
+    let thumb = document.querySelector(".active");
+    thumb.classList.remove("active");
+    // prendo tutte le immagini dal contenitore 
+    let thumbs = containerRight.getElementsByTagName("img");
+    // console.log(thumbs);
+    
 
     // console.log(event.target.className.includes("right"));
     if( event.target.className.includes("right") || event.target.className.includes("down")){
@@ -73,6 +85,10 @@ function carosello(event){
     else if( indice > 4){
         indice = 0;
     }
+    // aggiungo le classi dinamiche dopo aver aggiornato l'indice
     imgPrimary.setAttribute("src", `img/${paesi[indice]}.png`);
     description.textContent = `${descrizioni[indice]}`;
+    thumbs[indice].classList.add("active");
+    
+    
 }
